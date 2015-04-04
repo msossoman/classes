@@ -1,7 +1,6 @@
 # The subclasses Truck and Car are not working properly, and I can't figure out how to fix them.
 
 class Vehicle(object):
-
 	def __init__(self, name, wheels, color):
 		self.name = name
 		self.wheels = wheels
@@ -21,9 +20,8 @@ class Vehicle(object):
 		return self.color
 
 class Truck(Vehicle):
-
-	def __init__(self, name, fuel):
-		Vehicle.__init__(self)
+	def __init__(self, name, wheels, color, fuel):
+		Vehicle.__init__(self, name, wheels, color)
 		self.fuel = fuel
 
 	def fuelType(self):
@@ -33,9 +31,8 @@ class Truck(Vehicle):
 		return "Your truck takes %s as it's fuel." % (self.fuel)
 
 class Car(Vehicle):
-
-	def __init__(self, name, doors):
-		Vehicle.__init__(self)
+	def __init__(self, name, wheels, color, doors):
+		Vehicle.__init__(self, name, wheels, color)
 		self.doors = doors
 
 	def numberDoors(self):
